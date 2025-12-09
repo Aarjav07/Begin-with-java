@@ -1,0 +1,132 @@
+What is programming ?
+Programming is the process of giving instructions to a computer to make it perform tasks.
+Programming is telling a computer what to do.
+
+
+Static and Dynamic language.
+Static Language:
+Type checking happens at compile time.
+Example: Java, C, C++
+Errors are caught early.
+
+
+Dynamic Language:
+Type checking happens at runtime.
+Example: Python, JavaScript
+More flexible, but errors appear while running.
+
+
+compiler
+A compiler is a program that converts high-level code (like Java/C++) into machine code before execution.
+Checks errors during compile time
+Makes the program run faster.
+
+
+Interpreter
+An interpreter executes code line by line.
+Errors are found during execution
+Slower than a compiler
+Used in languages like Python, JavaScript
+
+
+JAVA and its feature
+A high-level, object-oriented, platform-independent programming language.
+
+Features of Java:
+Platform Independent – Write once, run anywhere.
+Object-Oriented – Uses classes and objects.
+Simple & Easy – Easy to learn syntax.
+Secure – Built-in security features.
+Robust – Strong memory management.
+Multithreaded – Can run multiple tasks at once.
+High Performance – Uses JIT compiler.
+Portable – Same code works on any machine.
+
+
+JVM (Java Virtual Machine):
+A part of Java that runs Java programs.
+
+What it does:
+Converts bytecode to machine code
+Manages memory
+Provides security
+Makes Java platform independent
+
+In short: JVM runs the Java program.
+
+
+JRE (Java Runtime Environment):
+It provides everything needed to run a Java program.
+
+Includes:
+JVM
+Libraries
+Runtime components
+
+In short: JRE = JVM + Libraries (for running Java applications).
+
+
+JDK (Java Development Kit):
+It is the tool used to develop Java programs.
+
+Includes:
+JRE
+JVM
+Development tools (compiler javac, debugger, etc.)
+
+In short: JDK = JRE + Tools (for developing Java applications).
+
+
+JIT (Just-In-Time Compiler):
+A part of JVM that converts bytecode into machine code at runtime for faster execution.
+
+In short: JIT makes Java programs run faster.
+
+
+Stack and Heap memory
+
+Stack Memory:
+Stores method calls, local variables
+Faster
+Memory is automatically cleared when a method ends
+
+Heap Memory:
+Stores objects and instance variables
+Slower
+Managed by Garbage Collector
+
+Simple:
+Stack = temporary data
+Heap = objects data
+
+
+Garbage Collector(GC)
+A Java program that automatically removes unused objects from Heap memory.
+
+Purpose:
+Frees memory
+Prevents memory leaks
+Makes Java memory management automatic
+
+In short: GC cleans unused objects to free space.
+
+
+Primitive and Non-primitive Datatype
+
+Primitive Data Types:
+Built-in, simple data types
+Store single values
+Fast and memory-efficient
+
+Examples: int, float, char, Boolean, byte, short, long, double
+
+Non-Primitive Data Types:
+Created by users
+Store multiple values or objects
+Can grow in size
+
+Examples: String, arrays, classes, objects, interfaces, collections
+
+Simple:
+Primitive = basic values
+Non-primitive = objects and complex types
