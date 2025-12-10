@@ -1,0 +1,429 @@
+//Day 1 remaining topics
+Q1.Class loader
+ClassLoader in Java is a part of JVM that loads .class files (bytecode) into memory before the program runs.
+
+Types (short & simple):
+
+Bootstrap ClassLoader
+Loads core Java classes (like java.lang).
+
+Extension ClassLoader
+Loads classes from extension libraries.
+
+Application ClassLoader
+Loads your program’s classes from the classpath.
+
+Short definition:
+ClassLoader loads Java classes into JVM memory so they can run.
+
+
+Q2.ClassLoader Code Life Cycle:
+
+1. Loading
+ClassLoader loads the .class file (bytecode) into memory.
+
+2. Linking
+Linking has 3 steps:
+
+Verification → checks bytecode is safe
+
+Preparation → allocates memory for static variables
+
+Resolution → replaces symbolic references with actual memory addresses
+
+3. Initialization
+
+Static variables get initial values
+
+Static blocks run
+
+Short summary:
+Loading → Linking → Initialization
+This is the ClassLoader life cycle.
+
+
+Q3.MetaSpace
+Metaspace is the memory area in Java where class metadata (information about classes) is stored.
+
+Short & Simple Explanation:
+
+Metaspace stores class information, not objects.
+
+Replaced PermGen from Java 8 onwards.
+
+It grows dynamically (no fixed size).
+
+Uses native memory, not JVM heap.
+
+Why Metaspace?
+
+Avoids “OutOfMemory: PermGen error”.
+
+More flexible and efficient.
+
+Shortest definition:
+
+Metaspace = memory area where JVM stores class definitions and metadata.
+
+
+//Starting with Day 2
+Q1.Tokens in Java:
+Smallest elements of a Java program.
+
+Types of Tokens:
+Keywords – reserved words (class, int, if)
+
+Identifiers – names (variables, methods, classes)
+
+Literals – constant values (10, "Hello")
+
+Operators – +, -, *, /, ==
+
+Separators – symbols like ; , () {} []
+
+Comments – // or /* */
+
+Short:
+Tokens = building blocks of Java code.
+
+
+Q2.Symbols in Java
+Symbols in Java are characters used for structure and operations.
+
+Common Java Symbols:
+
+() → parentheses
+
+{} → braces
+
+[] → brackets
+
+; → statement terminator
+
+, → separator
+
+. → access operator
+
+= → assignment
+
++ - * / → arithmetic
+
+== != > < → comparison
+
+&& || ! → logical
+
+: → used in loops, switch cases
+
+" " → string
+
+' ' → character
+
+Short:
+Symbols help Java understand structure and operations.
+
+
+Q3.Comments
+Comments in Java are notes in the code that Java ignores.
+
+Types:
+
+Single-line comment:
+
+// This is a comment
+
+
+Multi-line comment:
+
+/* This is
+   a multi-line comment */
+
+
+Documentation comment (Javadoc):
+
+/** This generates documentation */
+
+
+Short:
+Comments explain code; they are not executed.
+
+
+Q4.Separators
+Separators in Java are symbols used to separate code components.
+
+Common Separators:
+
+; → Ends a statement
+
+, → Separates variables or arguments
+
+. → Access members (object.method)
+
+() → Method call / grouping
+
+{} → Start & end of class, method, blocks
+
+[] → Array declaration
+
+: → Used in for-each loop & switch (case:)
+
+Short:
+Separators help structure the code properly.
+
+
+Q5.Operators
+Operators in Java are symbols that perform operations on variables and values.
+
+Types (short & simple):
+
+Arithmetic Operators
++ - * / %
+
+Assignment Operators
+= += -= *= /=
+
+Comparison (Relational) Operators
+== != > < >= <=
+
+Logical Operators
+&& || !
+
+Unary Operators
+++ -- + - !
+
+Bitwise Operators
+& | ^ << >>
+
+Ternary Operator
+?:
+
+Misc Operators
+instanceof , new
+
+
+Q6.Literals
+Literals are fixed values written directly in the code.
+
+Types of literals (short & simple):
+
+Integer Literal → 10, -5
+
+Floating Literal → 3.14, 2.5f
+
+Character Literal → 'A', '5'
+
+String Literal → "Hello"
+
+Boolean Literal → true, false
+
+Null Literal → null
+
+
+Q7.Identifiers
+Identifiers are names given to variables, methods, classes, objects, etc.
+
+Examples:
+
+age
+
+sum
+
+Student
+
+calculateTotal()
+
+Rules:
+
+Cannot start with a number
+
+No spaces
+
+No special symbols except _ and $
+
+Case-sensitive (Age ≠ age)
+
+Cannot use keywords (like class, int)
+
+Short:
+Identifiers = names we give in our Java program.
+
+
+Q8.Keyword
+Keywords are reserved words in Java with special meaning.
+You cannot use them as identifiers.
+
+Common Java Keywords:
+
+class, public, private, protected,static, final,if, else, switch, case,for, while, do,break, continue,return,
+void,int, float, char, boolean, double,try, catch, finally,throw, throws,new, this, super,extends, implements,
+import, package.
+
+Short:
+Keywords = words already defined in Java, not reusable as names.
+There are 67 keywords in Java.
+
+
+Q9.Type conversion
+Type Conversion means changing one data type into another.
+
+Types:
+1. Implicit Conversion (Automatic / Widening)
+
+Small → big type
+Example:
+int → long → float → double
+
+Java does it automatically.
+
+2. Explicit Conversion (Casting / Narrowing)
+
+Big → small type
+You must cast manually:
+
+double d = 10.5;
+int x = (int) d;   // 10
+
+
+Short:
+Implicit = automatic
+Explicit = manual casting.
+
+
+Q10.Access Modifier
+Access Modifiers define who can access a class, method, or variable.
+
+Types (short & simple):
+
+public
+
+Accessible from anywhere.
+
+private
+
+Accessible only within the same class.
+
+protected
+
+Accessible in same package + subclasses.
+
+default (no keyword)
+
+Accessible only in same package.
+
+Shortest form:
+public > protected > default > private (in access level).
+
+
+Q11.Java code line By line explanation
+
+class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+
+Line-by-line explanation:
+1.class Hello {
+Creates a class named Hello.
+
+2.public static void main(String[] args)
+Main method → program starts from here.
+
+3.System.out.println("Hello World");
+Prints text on the screen.
+
+
+Q12.public static void main(String[] args) line-by-line explanation
+public
+Access modifier
+Means: can be called from anywhere
+JVM must access this method, so it’s public.
+
+2. static
+Belongs to the class, not object
+JVM can call main without creating object.
+
+3. void
+Return type
+Means: this method does not return anything.
+
+4. main
+Method name
+Starting point of every Java program
+JVM looks for this name to start execution.
+
+5. String[] args
+Parameter (array of String)
+Used to take command-line arguments
+You can write String args[] also → same meaning.
+
+So this line means:
+“A public, class-level, method named main that returns nothing and takes String array as input, where the program starts.”
+
+
+Q13.System.out.println("Hello World"); Line-by-line explanation
+1. System
+A built-in class in Java
+Belongs to java.lang package
+Contains useful tools like in, out, err
+
+2. out
+A static object inside System
+Represents the standard output device (your screen)
+Type: PrintStream
+
+3. println
+A method inside out
+Prints text and moves the cursor to the next line
+
+4. "Hello World"
+A string literal
+The message that will be printed
+
+Full Meaning (short):
+System.out.println("Hello World");
+→ Use Java’s system output object to print “Hello World” on the screen, then go to a new line.
+
+Q14.Different between system.out, system.in, system.err
+1. System.out
+Standard output stream
+Used to print on screen
+
+Example:
+System.out.println("Hello");
+
+2. System.in
+Standard input stream
+Used to take input from keyboard
+Example using Scanner:
+Scanner sc = new Scanner(System.in);
+
+3. System.err
+Standard error stream
+Used to print error messages
+
+Example:
+System.err.println("Error occurred");
+
+Short meaning:
+out → output
+
+in → input
+
+err → error printing
+
+
+Q15.Main method
+Main Method in Java is the starting point of every Java program.
+
+Syntax
+public static void main(String[] args)
+
+Meaning:
+public → JVM can access it from anywhere
+static → JVM can run it without creating an object
+void → does not return anything
+main → name of the method JVM looks for
+String[] args → takes command-line input
+
+Short definition:
+Main method is the entry point where Java program starts executing.
