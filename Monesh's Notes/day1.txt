@@ -1,0 +1,269 @@
+
+* What is a Programming Language?
+
+		A programming language is a special language used to give instructions to a computer.
+		Just like humans understand Hindi or English,
+		computers understand only 0s and 1s (binary).
+		But writing everything in 0s and 1s is very difficult.
+		So we use programming languages (like C, Java, Python, JavaScript) to write instructions in a simple, human-readable way.
+		The computer then converts these instructions into machine code (0s & 1s) and executes them.
+		
+		type 
+		
+		Low-Level Languages (Machine Level)
+			These languages are closest to the computer hardware.
+			They are fast but difficult for humans to understand.
+		
+		High-Level Languages
+			Easy for humans to read and write.
+			They are converted into machine code using compiler or interpreter.
+			
+		Procedural Languages (Structured Programming)
+			These languages follow a step-by-step approach.
+			Program = set of procedures/functions.
+		
+		Object-Oriented Programming (OOP Languages)
+			Based on objects + classes.
+			Useful for large applications.
+			
+		Functional Programming Languages
+			Based on mathematical functions.
+			Focus on what to do, not how to do.
+			jaise ki java script me hota hai fuctions ka use karte hai 
+			
+		Markup Languages
+			Used to define structure and formatting, not logic.	
+			like HTML, XML, JSON
+			
+		Database Query Languages
+			Used for interacting with databases.	
+			
+			
+1. Static Language (Statically Typed Language)
+
+		A static language is a language where type checking happens at compile time.
+
+		✔ Key Features:
+
+			Variables must have a fixed type
+			Type is known before running the program
+			Type errors are caught during compilation
+			Faster execution (because types are known early)
+			More memory-efficient
+			Requires explicit type declaration (mostly)
+
+		✔ Example Languages:
+			Java
+			C, C++, Rust, Go
+			Kotlin, Swift
+		✔ Example in Java:
+			int num = 10;    // type fixed as int
+			num = "hello";   // ❌ Compile-time error
+			
+2. Dynamic Language (Dynamically Typed Language)
+
+		A dynamic language is a language where type checking happens at runtime.
+
+		✔ Key Features:
+		Variable type is decided at runtime
+		Type can change anytime
+		Flexible and quick to write
+		Errors appear while running the program
+		Slower than static languages (because of runtime decisions)
+
+		✔ Example Languages:
+			Python
+			JavaScript
+			Ruby
+			PHP
+		✔ Example in Python:
+			x = 10     # x is int
+			x = "Hi"   # valid — x becomes string
+					
+			
+			
+	Static vs Dynamic — Comparison Table
+	
+	Feature			Static Language		Dynamic Language
+	Type Checking	Compile-time		Runtime
+	Variable Type	Fixed				Can change
+	Error Detection	Early				Late
+	Speed			Faster				Slower
+	Flexibility		Less				More
+	Examples		Java, C, C++		Python, JS
+	Suitable For	Large systems		Rapid development
+
+What is Java?
+
+	Java is a high-level, object-oriented, platform-independent programming language created by James Gosling at Sun Microsystems (1995).
+
+	Key Features
+		Platform Independent – Write Once Run Anywhere
+		Object-Oriented – Everything is based on real-world objects
+		Robust & Secure – Automatic memory management, bytecode verification
+		Multithreaded – Can run multiple tasks simultaneously
+		Portable – Same program works on all OS
+		High Performance – Uses Just-In-Time compiler
+		Distributed – Supports RMI, Web services
+	Why Java is Still Relevant Today
+		Android apps
+		Banking software
+		Trading applications
+		Enterprise Backend systems
+		Cloud, Microservices, Spring Boot
+		
+		
+	🔹 1. Compiler (javac)
+
+		A compiler converts Java source code (.java) into bytecode (.class).
+		✔ What it does:
+		Checks syntax
+		Reports errors
+		Converts human-readable code → bytecode
+		✔ Example:
+		javac MyProgram.java
+		Output: MyProgram.class (bytecode)
+
+	🔹 2. Interpreter
+
+		JVM has an internal interpreter that executes bytecode line by line.
+		✔ What it does:
+		Reads each bytecode instruction
+		Executes it one by one
+		Makes Java platform independent
+
+	🔹 3. JIT (Just-In-Time Compiler)
+
+		JIT is part of the JVM.
+		It improves performance by converting frequently used bytecode into native machine code.
+
+		✔ Why JIT?
+			Interpretation is slow
+			JIT compiles hot code paths → fast execution
+		✔ How JIT works:
+			JVM interprets code normally
+			If a method runs many times, JIT marks it as “hot”
+			Converts that method into machine code
+			Next time, JVM runs machine code directly → faster!
+
+	🔹 4. JVM (Java Virtual Machine)
+
+		JVM is a virtual computer that runs Java bytecode.
+
+		✔ What JVM does:
+		Loads bytecode
+		Verifies bytecode (security)
+		Executes bytecode
+		Provides memory management (Heap, Stack)
+		Performs Garbage Collection
+		✔ JVM = Brain of Java
+		Java is platform-independent because bytecode runs on JVM, and JVM is available for every OS (Windows, macOS, Linux).
+
+	🔹 5. JRE (Java Runtime Environment)
+
+		JRE provides everything needed to run a Java program.
+
+		✔ JRE contains:
+
+		JVM
+		Core libraries (java., javax.)
+		Supporting files
+		✔ JRE does NOT contain:
+		Compiler
+		Development tools
+		✔ Use case:
+		If you only want to run a Java program → install JRE.
+		
+	🔹 6. JDK (Java Development Kit)
+
+		JDK is the complete package for developing Java applications.
+		✔ JDK contains:
+		JRE
+		JVM
+		Libraries
+		Compiler (javac)
+		Tools (javadoc, jdb, jar)
+		✔ Use case:
+		If you want to write + compile + run Java → install JDK.
+
+
+1. Stack Memory (Fast, Temporary Memory)
+
+	Stack memory stores:
+		Local variables
+		Method parameters
+		Function call information
+		Primitive data types
+		References to objects (not the objects themselves)
+
+	✔ Key Features:
+		Very fast
+		Last In First Out (LIFO) structure
+		Memory is freed automatically when method ends
+		Small size compared to heap
+		
+		void test() {
+			int x = 10;  // stored in stack
+			int y = 20;  // stored in stack
+		}
+
+
+2. Heap Memory (Large, Dynamic Memory)
+
+	Heap memory stores:
+
+		Objects
+		Arrays
+		Instance variables
+		All objects created using new
+		
+	✔ Key Features:
+
+		Large memory area
+		Slower access than stack
+		Shared across all threads
+		Managed by Garbage Collector
+
+	✔ Example:
+		Car c = new Car();
+		
+		c → stored in stack
+		Actual object → stored in heap
+		
+3. Garbage Collector (GC)
+
+	Garbage Collector is a JVM component that automatically removes unused objects from heap memory.
+	✔ When does GC clean objects?
+		GC removes an object when:
+		❌ No reference is pointing to it
+		OR
+		❌ Object becomes unreachable
+
+	✔ Example:
+		Car c = new Car();
+		c = null;    // object in heap becomes unreachable
+		
+	Now GC can delete the object.
+
+				
+	Primitive Data Types
+	Primitive data types are the basic, fundamental data types built into Java.
+		Types of Primitive Data Types (8)
+		Type	Example		Size		Description
+		byte	10			1 byte		Small integer
+		short	100			2 bytes		Medium integer
+		int		1000		4 bytes		Common integer
+		long	10000L		8 bytes		Large integer
+		float	10.5f		4 bytes		Decimal number
+		double	20.55		8 bytes		Larger decimal number
+		char	'A'			2 bytes		Single character
+		boolean	true/false	1 bit		Logical value	
+	Non-Primitive Data Types
+		Non-primitive data types are created by the programmer or are class-based types.
+		Types of Non-Primitive Data Types
+		String
+		Arrays
+		Classes
+		Objects
+		Interfaces
+		
