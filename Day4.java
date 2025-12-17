@@ -25,9 +25,8 @@ Q3. Print odd numbers from 1 to 20
 Q4. Print table of 5
 5 × 1 … 5 × 10
 Q5. Print first N natural numbers
-Input N → print 1 to N.
 
-do while 
+Do while 
 Q6. Print numbers from 10 to 1 (reverse order)
 Q7. Print alphabets from A to Z
 Q8. Print sum of first 10 natural numbers
@@ -336,8 +335,39 @@ public class Day4 {
             System.out.println("5 x " + j + " = " + (5 * j));
             j++;
         }
+        //Print first N natural numbers. Input N → print 1 to N.
 
+        System.out.print("Enter N no.: ");
+        int n = scanner.nextInt();
+        int k = 1;
+        while (k <= n) {
+            System.out.println(k);
+            k++;
+        }
+        // Print numbers from 10 to 1 (reverse order) by using Do while
 
+        System.out.println("No.from 10 to 1");
+        int l=10;
+        do {
+            System.out.println(l);
+            l--;
+        } while (l>=1);
+        // Print alphabets from A to Z by using Do while
+
+        System.out.println("Printing A to Z");
+        char z = 'A';
+        do {
+            System.out.println(z);
+            z++;
+        } while (z <= 'Z');
+        // Print sum of first 10 natural numbers by using Do while
+        System.out.println("Sum of 1st 10 natural No.");
+        int N = 1;
+        do {
+            System.out.println("No. are " + N);
+            N++;
+        } while (N<=10);
+        
         scanner.close(); 
 
     }
