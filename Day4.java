@@ -367,6 +367,8 @@ public class Day4 {
             System.out.println("No. are " + N);
             N++;
         } while (N<=10);
+        
+        scanner.close(); 
 
     }
 }
