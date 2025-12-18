@@ -1,0 +1,130 @@
+Overloading 
+
+Method Overloading (Java):
+Definition: Method overloading means having multiple methods with the same name but different parameters in the same class.
+
+How methods can differ:
+Number of parameters
+Type of parameters
+Order of parameters
+(Return type alone cannot change)
+
+Example:
+class Add {
+    int sum(int a, int b) {
+        return a + b;
+    }
+
+    int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+Key points (short):
+Same method name
+Different parameter list
+Compile-time polymorphism
+
+In short:
+Overloading = same method name, different arguments.
+
+
+Shadowing in Java:
+
+Definition: Shadowing occurs when a local variable or parameter has the same name as an instance or class variable, hiding (shadowing) it.
+
+Example:
+class Test {
+    int x = 10;   // instance variable
+
+    void show(int x) {   // parameter shadows instance variable
+        System.out.println(x);        // prints 20
+        System.out.println(this.x);   // prints 10
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.show(20);
+    }
+}
+Explanation:
+x inside show() refers to parameter, not instance variable
+this.x refers to instance variable
+
+Key points (short):
+Happens due to same variable name
+Local variable has higher priority
+Use this (or class name for static) to access hidden variable
+
+In short: Shadowing = local variable hides class variable.
+
+
+Static Block in Java
+Definition: A static block is a block of code that runs automatically when the class is loaded into JVM.
+
+Syntax Example:
+class Test {
+    static {
+        System.out.println("Static block executed");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Main method");
+    }
+}
+Output:
+Static block executed
+Main method
+
+Key Points:
+Executes before main()
+Runs only once
+Used to initialize static variables
+No object needed
+
+Short definition: Static block executes automatically when the class is loaded.
+
+
+Call by Value
+A copy of the value is passed to the method.
+Changes inside the method do not affect the original variable.
+Java uses call by value only.
+
+Example:
+void change(int x) {
+    x = 10;
+}
+
+int a = 5;
+change(a);
+System.out.println(a); // 5
+
+
+Reason: x gets a copy of a.
+
+Call by Reference
+The actual memory address is passed.
+Changes inside the method affect the original variable.
+Java does NOT support true call by reference.
+
+Important Java Point:
+In Java, object references are passed by value.
+You can change the object’s data, but not the reference itself.
+
+Example:
+class Test {
+    int x = 5;
+}
+
+void change(Test t) {
+    t.x = 10;
+}
+
+Test obj = new Test();
+change(obj);
+System.out.println(obj.x); // 10
+
+Why? -> Copy of reference is passed → both point to same object.
+
+Final Conclusion (One Line):
+Java is strictly call by value, even for objects
