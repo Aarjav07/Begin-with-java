@@ -1,0 +1,278 @@
+What is break?
+
+break is a jump statement used to immediately stop:
+a loop (for, while, do-while), or
+a switch block.
+
+When break executes:    
+The control comes out of the loop/switch.
+Code after the loop/switch continues.
+
+🔹 break in a loop
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        break;   // loop ends when i becomes 3
+    }
+    System.out.println(i);
+}
+System.out.println("After loop");
+Output:
+1
+2
+After loop
+
+Explanation:
+
+i = 1 → prints 1
+
+i = 2 → prints 2
+
+i = 3 → condition i == 3 is true → break runs → loop stops.
+
+Does not print 4 and 5.
+
+
+break in switch
+int day = 2;
+
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    default:
+        System.out.println("Other day");
+}
+
+Without break, next cases will also run (fall-through).
+
+
+Continue in Java
+
+What is continue?
+continue is used in loops to:
+skip the current iteration
+jump to the next iteration of the loop.
+It does not end the loop, only skips that one turn.
+
+continue in a loop
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue;   // skips when i = 3
+    }
+    System.out.println(i);
+}
+
+Output:
+1
+2
+4
+5
+
+Explanation:
+i = 1 → prints 1
+
+i = 2 → prints 2
+
+i = 3 → continue → skips System.out.println(i);
+
+i = 4, 5 → prints 4 and 5
+
+So:
+break → stops the loop.
+continue → skips one iteration, loop continues.
+
+continue in while loop
+int i = 1;
+while (i <= 5) {
+    if (i == 3) {
+        i++;         // important to avoid infinite loop
+        continue;
+    }
+    System.out.println(i);
+    i++;
+}
+
+
+Nested if and if-else
+
+What is nested if?
+A nested if means:
+An if (or if-else) inside another if (or else) block.
+Used for multiple-level conditions.
+
+Example: Nested if
+int age = 20;
+boolean hasId = true;
+
+if (age >= 18) {                  // outer if
+    if (hasId) {                  // inner if
+        System.out.println("Allowed entry");
+    } else {
+        System.out.println("ID required");
+    }
+} else {
+    System.out.println("Underage");
+}
+
+Explanation:
+First check: age >= 18
+
+If false → directly prints "Underage".
+
+If true → then inner if runs:
+
+If hasId == true → "Allowed entry"
+
+Else → "ID required"
+
+Nested if-else for grade example
+int marks = 85;
+
+if (marks >= 0 && marks <= 100) {       // valid marks
+    if (marks >= 90) {
+        System.out.println("Grade A");
+    } else if (marks >= 75) {
+        System.out.println("Grade B");
+    } else if (marks >= 50) {
+        System.out.println("Grade C");
+    } else {
+        System.out.println("Fail");
+    }
+} else {
+    System.out.println("Invalid marks");
+}
+
+Here:
+Outer if → checks if marks are valid.
+Inner if-else → decides grade.
+
+
+Difference Between == and .equals()
+1️ == (Double Equals Operator)
+
+Compares memory address (reference).
+
+Checks whether both variables point to the same object.
+
+Used for primitive types and object reference comparison.
+
+Example:
+String s1 = new String("Hello");
+String s2 = new String("Hello");
+
+System.out.println(s1 == s2);  
+
+Output: false
+(Because both are different objects in memory)
+
+2️ .equals() (Method)
+Compares actual content/value inside the object.
+Defined in the String class (and many others).
+
+Example: System.out.println(s1.equals(s2));
+
+Output: true (Because both strings have same text)
+
+Very short difference:
+== → compares memory location
+.equals() → compares values
+
+
+Pre-increment (++x)
+First increases the value
+Then uses the value
+
+Example:
+int x = 5;
+int y = ++x;
+
+Result:
+x = 6
+y = 6
+
+Post-increment (x++)
+First uses the value
+Then increases the value
+
+Example:
+int x = 5;
+int y = x++;
+
+Result:
+x = 6
+y = 5
+
+Key Difference (One Line):
+++x → increment first, then use
+x++ → use first, then increment
+
+
+Difference Between Method and Function
+
+Method
+A function inside a class.
+Belongs to an object or class.
+Used in OOP languages like Java.
+
+Function
+A block of code that performs a task.
+Can exist without a class (in languages like C, Python).
+Used in procedural programming.
+
+Very Short Answer:
+Method = function inside a class
+Function = standalone block of code
+
+
+Method Calling in Java
+Method calling means invoking a method to execute its code.
+
+~Calling a method from main()
+Example:
+class Test {
+    void show() {
+        System.out.println("Hello");
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test(); // object creation
+        t.show();           // method call
+    }
+}
+Explanation:
+Create an object of the class
+Use object.methodName() to call the method
+
+~ Calling a static method
+class Test {
+    static void display() {
+        System.out.println("Static method");
+    }
+
+    public static void main(String[] args) {
+        display(); // or Test.display();
+    }
+}
+Explanation:
+No object needed
+Called using class name or directly
+
+~ Calling a method with parameters
+void add(int a, int b) {
+    System.out.println(a + b);
+}
+add(10, 20);
+
+~ Calling a method with return value
+int square(int x) {
+    return x * x;
+}
+int result = square(5);
+
+Short summary:
+Method is called using method name
+Object needed for non-static methods
+No object needed for static methods
